@@ -26,9 +26,9 @@ export default function MobileBlockModal() {
     <div className="mobile-block" role="alertdialog" aria-modal="true" aria-labelledby="mb-title">
       <div className="mobile-block__card">
         <h2 id="mb-title" className="mobile-block__title">
-          Please use a larger screen
+          This site is not working good on mobile devices.
         </h2>
-        <p className="mobile-block__body">This application is designed for desktop or tablet browsers.</p>
+        <p className="mobile-block__body">Please use desktop or tablet browsers to apply.</p>
       </div>
     </div>
   );
