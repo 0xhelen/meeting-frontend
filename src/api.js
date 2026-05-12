@@ -1,5 +1,6 @@
 //const BASE = import.meta.env.VITE_API_BASE || "";
-const BASE = "https://meeting-server-cemb.vercel.app";
+const BASE = import.meta.env.VITE_API_BASE || "";
+
 function authHeaders() {
   const token = localStorage.getItem("adminToken");
   return token ? { Authorization: `Bearer ${token}` } : {};
