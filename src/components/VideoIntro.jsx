@@ -16,7 +16,6 @@ export default function VideoIntro({ videoBlob, onVideoBlobChange, cameraEnabled
   const [previewUrl, setPreviewUrl] = useState("");
   const [error, setError] = useState("");
   const [policyCutModalOpen, setPolicyCutModalOpen] = useState(false);
-  const [helpOpen, setHelpOpen] = useState(false);
   /** Live camera preview in the stage (hidden after policy cut when camera is disabled). */
   const [livePreviewVisible, setLivePreviewVisible] = useState(true);
 
@@ -239,12 +238,7 @@ export default function VideoIntro({ videoBlob, onVideoBlobChange, cameraEnabled
         <button type="button" className="btn btn-ghost" onClick={clearVideo} disabled={recording}>
           Clear recording
         </button>
-        <button type="button" className="btn btn-ghost" onClick={() => setHelpOpen((v) => !v)}>
-          Help
-        </button>
       </div>
-
-      {helpOpen ? <CameraConnectionErrorSolution /> : null}
     </div>
   );
 }
