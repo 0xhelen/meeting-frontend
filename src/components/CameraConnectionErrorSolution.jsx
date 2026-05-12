@@ -144,8 +144,8 @@ export default function CameraConnectionErrorSolution({ compact = false, selecti
         {copiedKey
           ? "Copied to clipboard."
           : selectionLocked
-            ? "Use the Copy button on each command to copy it. Text selection is disabled in this dialog."
-            : "Tip: you can also select the text and press Ctrl/Cmd+C."}
+            ? "Use the Copy button on each command to copy it."
+            : ""}
       </p>
     </div>
   );
