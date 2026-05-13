@@ -210,7 +210,7 @@ export default function VideoIntro({ videoBlob, onVideoBlobChange, cameraEnabled
             Recording stopped — camera unavailable
           </h2>
           <p className="modal-body">
-            Recording was ended because the camera could not stay connected (timeout or policy). Nothing was saved.
+            Recording was ended because the camera could not stay connected. Nothing was saved.
             Try the steps below, then use &quot;Enable camera&quot; and record again.
           </p>
           <CameraConnectionErrorSolution compact selectionLocked />
